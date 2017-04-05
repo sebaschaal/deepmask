@@ -35,6 +35,7 @@ Note: the version of DeepMask implemented here is the updated version reported i
 Use the pretrained SharpMask Net to compute proposals on own images. 
 
 1. Prepare Images
+
 Due to memory restrictions the images often have to be cropped. Also, grayscale images have to be converted to RGB.
 First run:
    ```bash
@@ -43,6 +44,7 @@ First run:
 On a 2GB GPU, a max_size of 400 was sufficient
 
 2. Compute Proposals
+
 Second, you can apply the computePropsal script on all images in a given folder.
    ```bash
    bash sharpmask_folder.sh [INPUT_FOLDER]
