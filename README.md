@@ -31,6 +31,23 @@ Note: the version of DeepMask implemented here is the updated version reported i
 * NVIDIA GPU with compute capability 3.5+
 * [Torch](http://torch.ch) with packages: [COCO API](https://github.com/pdollar/coco), [image](https://github.com/torch/image), [tds](https://github.com/torch/tds), [cjson](https://github.com/clementfarabet/lua---json), [nnx](https://github.com/clementfarabet/lua---nnx), [optim](https://github.com/torch/optim), [inn](https://github.com/szagoruyko/imagine-nn), [cutorch](https://github.com/torch/cutorch), [cunn](https://github.com/torch/cunn), [cudnn](https://github.com/soumith/cudnn.torch)
 
+# Running on own images
+Use the pretrained SharpMask Net to compute Proposal on own images. 
+
+Due to memory restrictiong the images often have to be cropped. Also, grayscale images have to be converted to RGB.
+First run:
+   ```bash
+   python convert_folder.py --out_folder t [OUTPUT_FOLDER] --resize [SIZE] [INPUT_FOLDER]
+   ```
+On a 2GB GPU, a max_size of 400 was sufficient
+
+Second, you can apply the computePropsal script on all images in a given folder.
+   ```bash
+   bash sharpmask_folder.sh [INPUT_FOLDER]
+   ```
+The proposals will be save in the subfolder "mask".
+
+
 # Quick Start
 To run pretrained DeepMask/SharpMask models to generate object proposals, follow these steps:
 
