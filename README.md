@@ -38,7 +38,7 @@ Use the pretrained SharpMask Net to compute proposals on own images.
 Due to memory restrictions the images often have to be cropped. Also, grayscale images have to be converted to RGB.
 First run:
    ```bash
-   python convert_folder.py --out_folder t [OUTPUT_FOLDER] --resize [SIZE] [INPUT_FOLDER]
+   python convert_folder.py --out_folder [OUTPUT_FOLDER] --resize [SIZE] [INPUT_FOLDER]
    ```
 On a 2GB GPU, a max_size of 400 was sufficient
 
