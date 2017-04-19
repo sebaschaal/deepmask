@@ -31,6 +31,20 @@ Note: the version of DeepMask implemented here is the updated version reported i
 * NVIDIA GPU with compute capability 3.5+
 * [Torch](http://torch.ch) with packages: [COCO API](https://github.com/pdollar/coco), [image](https://github.com/torch/image), [tds](https://github.com/torch/tds), [cjson](https://github.com/clementfarabet/lua---json), [nnx](https://github.com/clementfarabet/lua---nnx), [optim](https://github.com/torch/optim), [inn](https://github.com/szagoruyko/imagine-nn), [cutorch](https://github.com/torch/cutorch), [cunn](https://github.com/torch/cunn), [cudnn](https://github.com/soumith/cudnn.torch)
 
+# Requirements for own Images
+The quick analysis of images relies on the ImageMagik tool.
+To install, run the following:
+```bash
+sudo -i
+cd
+apt-get install build-essential checkinstall wget && apt-get build-dep imagemagick -y
+wget http://www.imagemagick.org/download/ImageMagick.tar.gz
+tar xzvf ImageMagick-*
+cd ImageMagick-*
+./configure --prefix=/opt/imagemagick-* && make
+checkinstall
+```
+
 # Running on own Images
 Use the pretrained SharpMask Net to compute proposals on own images. 
 
